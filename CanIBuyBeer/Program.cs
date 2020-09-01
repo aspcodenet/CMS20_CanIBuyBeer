@@ -16,6 +16,10 @@ namespace CanIBuyBeer
                 return false;
             if (promille > 1.0m)
                 return false;
+
+            if (age > 15 && location == "skolan")
+                return true;
+
             if (age > 17 && location == "krogen")
                 return true;
             if (age > 19 && location == "systemet")
@@ -46,8 +50,7 @@ namespace CanIBuyBeer
 
         static void Main(string[] args)
         {
-            //bool 
-            //string inmatning upper etc
+            Console.WriteLine("Superduper Beer Calculator 1.01");
 
             Console.Write("Hur gammal är du:");
             int age = Convert.ToInt32(Console.ReadLine());
@@ -77,7 +80,7 @@ namespace CanIBuyBeer
             if (canIBuyBeer)
                 Console.WriteLine("Du får köpa öl");
             else
-                Console.WriteLine("Du får inte köpa öl");
+                Console.WriteLine("Du får INTE köpa öl");
 
 
 
